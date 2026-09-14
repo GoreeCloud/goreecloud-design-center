@@ -1,0 +1,22 @@
+{
+  "product": {
+    "name": "GoreeCloud Design Center",
+    "shortName": "Design Center",
+    "status": "development"
+  },
+  "glaze": {
+    "version": "1.4.0",
+    "repository": "GoreeCloud/goreecloud-glaze-ui",
+    "sourceCommit": "ee057ce9e729296aeaeda182d01db89f52bd66f3",
+    "cssEntrypoint": "css/glaze-v1.4.0.css"
+  },
+  "supportedCompositions": [
+    "mobile",
+    "tablet",
+    "desktop",
+    "wide-desktop"
+  ],
+  "deployment": {
+    "status": "not-configured"
+  }
+}

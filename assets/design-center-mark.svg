@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">GoreeCloud Design Center</title>
+  <desc id="desc">Three offset rounded diamonds forming a layered design surface.</desc>
+  <defs>
+    <linearGradient id="g" x1="12" y1="8" x2="50" y2="55" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#176e73"/>
+      <stop offset=".55" stop-color="#2c8f8a"/>
+      <stop offset="1" stop-color="#d39955"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="#f4f7f7"/>
+  <path d="M32 10 51 21 32 32 13 21 32 10Z" fill="url(#g)"/>
+  <path d="m13 29 19 11 19-11v8L32 48 13 37v-8Z" fill="#176e73" opacity=".78"/>
+  <path d="m13 41 19 11 19-11v7L32 59 13 48v-7Z" fill="#0f4e53" opacity=".62"/>
+</svg>

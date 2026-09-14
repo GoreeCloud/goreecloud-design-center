@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en" data-glz-appearance="light" data-glz-layout-class="compact">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f4f7f7">
+  <meta name="description" content="GoreeCloud Design Center development workspace for Glaze UI foundations, components, and adaptive interface references.">
+  <title>Design Center — GoreeCloud</title>
+  <link rel="icon" href="assets/design-center-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/glaze/css/glaze-v1.4.0.css">
+  <link rel="stylesheet" href="src/app.css">
+</head>
+<body>
+  <a class="skip-link" href="#workspace">Skip to content</a>
+
+  <div class="dc-shell">
+    <aside class="dc-sidebar" aria-label="Design Center navigation" data-glaze-optical-v14="adaptive-optical">
+      <a class="dc-brand" href="#overview" aria-label="Design Center home">
+        <img src="assets/design-center-mark.svg" width="40" height="40" alt="">
+        <span><strong>Design Center</strong><small>GoreeCloud</small></span>
+      </a>
+
+      <nav class="dc-nav" aria-label="Sections">
+        <a href="#overview" aria-current="page"><span aria-hidden="true">⌂</span><span>Overview</span></a>
+        <a href="#foundations"><span aria-hidden="true">◫</span><span>Foundations</span></a>
+        <a href="#components"><span aria-hidden="true">◇</span><span>Components</span></a>
+        <a href="#adaptation"><span aria-hidden="true">↔</span><span>Adaptation</span></a>
+        <a href="#accessibility"><span aria-hidden="true">◎</span><span>Accessibility</span></a>
+      </nav>
+
+      <div class="dc-sidebar-status">
+        <span class="dc-status-dot" aria-hidden="true"></span>
+        <span><strong>Development</strong><small>Glaze UI 1.4.0 target</small></span>
+      </div>
+    </aside>
+
+    <div class="dc-main-column">
+      <header class="dc-topbar" data-glaze-optical-v14="adaptive-optical">
+        <button class="dc-menu-button" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-navigation">☰</button>
+        <div class="dc-search glz1-universal-search" role="search">
+          <label class="sr-only" for="catalog-search">Search Design Center</label>
+          <div class="glz1-search-entry">
+            <span aria-hidden="true">⌕</span>
+            <input id="catalog-search" type="search" inputmode="search" autocomplete="off" placeholder="Search foundations and components">
+            <kbd aria-hidden="true">/</kbd>
+          </div>
+        </div>
+        <div class="dc-appearance" aria-label="Appearance">
+          <label class="sr-only" for="appearance">Appearance</label>
+          <select id="appearance" class="dc-select">
+            <option value="system">System</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+            <option value="deep-dark">Deep Dark</option>
+          </select>
+        </div>
+      </header>
+
+      <nav id="mobile-navigation" class="dc-mobile-nav" aria-label="Mobile sections" hidden>
+        <a href="#overview">Overview</a>
+        <a href="#foundations">Foundations</a>
+        <a href="#components">Components</a>
+        <a href="#adaptation">Adaptation</a>
+        <a href="#accessibility">Accessibility</a>
+      </nav>
+
+      <main id="workspace" class="dc-workspace" tabindex="-1">
+        <section id="overview" class="dc-hero dc-searchable" data-search="overview status current stable glaze optical intelligence">
+          <div class="dc-eyebrow"><span class="dc-badge">Development foundation</span><span>Current shared target · GLAZE UI V1.4</span></div>
+          <h1>Design GoreeCloud with one shared visual language.</h1>
+          <p class="dc-lede">Design Center is a focused workspace for inspecting Glaze foundations, testing interaction patterns, and keeping GoreeCloud interfaces recognizable without turning presentation into operational authority.</p>
+          <div class="dc-hero-actions">
+            <a class="glz1-advanced-button dc-primary-action" href="#components">Explore components</a>
+            <a class="dc-secondary-action" href="#foundations">Review foundations</a>
+          </div>
+
+          <div class="dc-metric-grid" aria-label="Current implementation status">
+            <article class="dc-metric"><span>Stable Glaze target</span><strong>1.4.0</strong><small>Optical Intelligence</small></article>
+            <article class="dc-metric"><span>Design Center state</span><strong>Development</strong><small>No Stable claim</small></article>
+            <article class="dc-metric"><span>Runtime dependencies</span><strong>Local</strong><small>No third-party CDN</small></article>
+            <article class="dc-metric"><span>Compositions</span><strong>4</strong><small>Mobile → Wide Desktop</small></article>
+          </div>
+        </section>
+
+        <section id="foundations" class="dc-section dc-searchable" data-search="foundations material hierarchy canvas surface soft glaze deep live semantic color typography spacing">
+          <div class="dc-section-heading">
+            <div><p class="dc-kicker">Foundations</p><h2>Hierarchy before decoration.</h2></div>
+            <p>Glaze material expresses interaction and depth while durable reading and critical decisions remain solid or near-solid.</p>
+          </div>
+
+          <div class="dc-foundation-grid">
+            <article class="dc-card dc-span-2">
+              <div class="dc-card-head"><h3>Material hierarchy</h3><span class="dc-chip">Canonical order</span></div>
+              <div class="dc-material-row" aria-label="Glaze material hierarchy">
+                <div class="dc-material dc-canvas"><span>Canvas</span></div>
+                <div class="dc-material dc-surface"><span>Surface</span></div>
+                <div class="dc-material dc-soft"><span>Soft Glaze</span></div>
+                <div class="dc-material dc-glaze" data-glaze-optical-v14="adaptive-optical"><span>Glaze</span></div>
+                <div class="dc-material dc-deep" data-glaze-optical-v14="adaptive-optical"><span>Deep Glaze</span></div>
+                <div class="dc-material dc-live" data-glaze-optical-v14="adaptive-optical"><span>Live Glaze</span></div>
+              </div>
+            </article>
+
+            <article class="dc-card">
+              <div class="dc-card-head"><h3>Protected semantics</h3><span class="dc-chip">Truth-first</span></div>
+              <div class="dc-state-stack">
+                <span class="dc-state success"><i></i>Success</span>
+                <span class="dc-state warning"><i></i>Warning</span>
+                <span class="dc-state critical"><i></i>Critical</span>
+                <span class="dc-state privacy"><i></i>Privacy</span>
+                <span class="dc-state security"><i></i>Security</span>
+              </div>
+              <p class="dc-note">Color reinforces meaning; it never carries critical meaning alone.</p>
+            </article>
+
+            <article class="dc-card">
+              <div class="dc-card-head"><h3>Optical budget</h3><span class="dc-chip">Bounded</span></div>
+              <div class="dc-budget-visual" aria-hidden="true">
+                <div class="dc-budget-main">1 dominant panel</div>
+                <div class="dc-budget-floats"><span></span><span></span><span></span></div>
+              </div>
+              <p class="dc-note">Avoid default nested backdrop-blur stacks. Effects must be removable without semantic loss.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="components" class="dc-section dc-searchable" data-search="components buttons input select switch cards capsule universal search controls">
+          <div class="dc-section-heading">
+            <div><p class="dc-kicker">Components</p><h2>Reusable controls with visible state.</h2></div>
+            <p>These specimens exercise current inherited Glaze class hooks plus Design Center composition and accessibility rules.</p>
+          </div>
+
+          <div class="dc-component-grid">
+            <article class="dc-card dc-specimen">
+              <div class="dc-card-head"><div><h3>Actions</h3><small>Default · focused · destructive</small></div><span class="dc-index">01</span></div>
+              <div class="dc-stage">
+                <button class="glz1-advanced-button" type="button">Primary action</button>
+                <button class="dc-button" type="button">Secondary</button>
+                <button class="dc-button dc-danger" type="button">Remove</button>
+              </div>
+            </article>
+
+            <article class="dc-card dc-specimen">
+              <div class="dc-card-head"><div><h3>Fields</h3><small>Readable, labeled, keyboard reachable</small></div><span class="dc-index">02</span></div>
+              <div class="dc-stage dc-form-stage">
+                <label for="sample-name">Project name</label>
+                <input id="sample-name" class="dc-input" type="text" value="Design Center">
+                <label for="sample-mode">Presentation profile</label>
+                <select id="sample-mode" class="dc-select dc-input">
+                  <option>Calm</option><option selected>Balanced</option><option>Expressive</option>
+                </select>
+              </div>
+            </article>
+
+            <article class="dc-card dc-specimen">
+              <div class="dc-card-head"><div><h3>Choice</h3><small>State remains explicit without color alone</small></div><span class="dc-index">03</span></div>
+              <div class="dc-stage dc-choice-stage">
+                <label class="dc-switch"><input type="checkbox" checked><span aria-hidden="true"></span><b>Use adaptive optical material</b></label>
+                <label class="dc-switch"><input type="checkbox"><span aria-hidden="true"></span><b>High-density preview</b></label>
+              </div>
+            </article>
+
+            <article class="dc-card dc-specimen dc-span-2">
+              <div class="dc-card-head"><div><h3>Universal Search composition</h3><small>Command and discovery chrome stays distinct from durable content</small></div><span class="dc-index">04</span></div>
+              <div class="dc-stage">
+                <div class="glz1-universal-search dc-demo-search">
+                  <div class="glz1-search-entry">
+                    <span aria-hidden="true">⌕</span>
+                    <input type="search" aria-label="Example universal search" placeholder="Search GoreeCloud">
+                    <button type="button" class="glz1-advanced-button">Search</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="adaptation" class="dc-section dc-searchable" data-search="adaptation responsive mobile tablet desktop wide breakpoints touch keyboard pointer">
+          <div class="dc-section-heading">
+            <div><p class="dc-kicker">Adaptation</p><h2>Purpose-built across window classes.</h2></div>
+            <p>Responsive width is a signal, not a product identity. Navigation, density, and input behavior transform with the interaction environment.</p>
+          </div>
+
+          <div class="dc-window-grid">
+            <article class="dc-window"><div class="dc-window-preview compact"><span></span></div><h3>Compact</h3><p>≤ 599 px</p><small>Touch-first · stacked tasks · reachability</small></article>
+            <article class="dc-window"><div class="dc-window-preview medium"><span></span><span></span></div><h3>Medium</h3><p>600–1023 px</p><small>Tablet composition · split context where useful</small></article>
+            <article class="dc-window"><div class="dc-window-preview expanded"><span></span><span></span></div><h3>Expanded</h3><p>1024–1439 px</p><small>Desktop workspace · pointer + keyboard</small></article>
+            <article class="dc-window"><div class="dc-window-preview wide"><span></span><span></span><span></span></div><h3>Wide</h3><p>≥ 1440 px</p><small>More context, not simply larger content</small></article>
+          </div>
+        </section>
+
+        <section id="accessibility" class="dc-section dc-searchable" data-search="accessibility reduced motion transparency forced colors contrast rtl 200 text keyboard focus">
+          <div class="dc-section-heading">
+            <div><p class="dc-kicker">Accessibility</p><h2>Visual refinement must survive fallback.</h2></div>
+            <p>The interface keeps hierarchy, labels, focus, and critical meaning when motion, transparency, color, or space is constrained.</p>
+          </div>
+
+          <div class="dc-access-grid">
+            <article class="dc-card"><strong>Reduced Motion</strong><p>Nonessential travel collapses to short state changes and fades.</p></article>
+            <article class="dc-card"><strong>Reduced Transparency</strong><p>Glazed chrome becomes solid while hierarchy and semantics remain intact.</p></article>
+            <article class="dc-card"><strong>Forced Colors</strong><p>System colors and visible boundaries replace decorative depth.</p></article>
+            <article class="dc-card"><strong>200% Text</strong><p>Layouts reflow instead of clipping controls or important content.</p></article>
+            <article class="dc-card"><strong>Keyboard</strong><p>Focus is visible, ordered, and never hidden behind presentation effects.</p></article>
+            <article class="dc-card"><strong>Touch</strong><p>Interactive controls preserve a 48 px reference target floor.</p></article>
+          </div>
+        </section>
+
+        <p id="empty-state" class="dc-empty" hidden>No Design Center section matches that search.</p>
+        <div class="sr-only" aria-live="polite" id="search-status"></div>
+      </main>
+
+      <footer class="dc-footer">
+        <span>GoreeCloud Design Center · Development</span>
+        <span>GLAZE UI V1.4 / 1.4.0</span>
+      </footer>
+    </div>
+  </div>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
