@@ -1,0 +1,15 @@
+{
+  "name": "@goreecloud/design-center",
+  "version": "0.1.0-development",
+  "private": true,
+  "description": "GoreeCloud Design Center development foundation and Glaze UI reference workspace.",
+  "type": "module",
+  "scripts": {
+    "sync:glaze": "node scripts/tooling.mjs sync",
+    "validate": "node scripts/tooling.mjs validate",
+    "build": "node scripts/tooling.mjs build"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
