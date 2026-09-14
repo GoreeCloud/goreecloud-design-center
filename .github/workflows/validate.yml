@@ -12,16 +12,37 @@ permissions:
 jobs:
   validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 12
     steps:
-      - name: Check out source
+      - name: Check out Design Center source
         uses: actions/checkout@v4
+
+      - name: Check out pinned Platform Contract authority
+        uses: actions/checkout@v4
+        with:
+          repository: GoreeCloud/GoreeCloud
+          ref: 908701c6795ffcd608bd3d8a1e787395a04f1d62
+          path: .platform-contract
+
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Build and validate
+
+      - name: Use Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install pinned Platform Contract validator dependencies
+        run: python -m pip install --disable-pip-version-check PyYAML==6.0.2 jsonschema==4.23.0
+
+      - name: Validate Platform Contract 0.3 declaration
+        run: python .platform-contract/scripts/validate_platform_manifest.py goreecloud.platform.yaml
+
+      - name: Build and validate Design Center
         run: npm run build
+
       - name: Upload static artifact
         uses: actions/upload-artifact@v4
         with:

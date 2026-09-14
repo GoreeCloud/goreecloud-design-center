@@ -1,0 +1,103 @@
+{
+  "schema_version": "0.3",
+  "component": {
+    "type": "application",
+    "id": "design-center",
+    "product_name": "GoreeCloud Design Center",
+    "repository": "GoreeCloud/goreecloud-design-center"
+  },
+  "lifecycle": "development",
+  "version": "0.1.0-development",
+  "supported_platforms": ["web"],
+  "api": {"versions": [], "endpoints": []},
+  "platform_systems": {
+    "manager": {
+      "result": "applicable-blocked",
+      "version": null,
+      "evidence": [],
+      "notes": "No accepted GoreeCloud Manager operational integration exists for the undeployed Development application."
+    },
+    "privacy_shield": {
+      "result": "applicable-blocked",
+      "version": null,
+      "evidence": ["PRIVACY POLICY.md"],
+      "notes": "The current source minimizes runtime data handling, but accepted Privacy Shield integration evidence has not been produced."
+    },
+    "wardveil_security": {
+      "result": "applicable-blocked",
+      "version": null,
+      "evidence": ["SECURITY.md"],
+      "notes": "Repository security controls are documented, but accepted Wardveil Security runtime integration evidence has not been produced."
+    },
+    "everkeep": {
+      "result": "applicable-blocked",
+      "version": null,
+      "evidence": [],
+      "notes": "The static Development application has no durable user dataset, but deployment rollback and accepted Everkeep integration remain unverified."
+    },
+    "glaze_ui": {
+      "result": "applicable-nonconformant",
+      "version": "1.4.0",
+      "evidence": ["design-center.config.json", "scripts/tooling.mjs", ".github/workflows/validate.yml"],
+      "notes": "Current Stable GLAZE UI V1.4 source is pinned and validated at build time; application-specific rendered, accessibility, browser, and production acceptance remain incomplete."
+    },
+    "mesh": {
+      "result": "applicable-blocked",
+      "version": null,
+      "evidence": [],
+      "notes": "No accepted GoreeCloud Mesh capability registration or runtime integration exists.",
+      "capabilities": [],
+      "dependencies": [],
+      "published_events": [],
+      "consumed_events": []
+    },
+    "identity": {
+      "result": "not-applicable-justified",
+      "version": null,
+      "evidence": ["docs/platform/non-applicability.md"],
+      "notes": "The current Development runtime has no accounts, authentication, authorization, user-owned data, sessions, or privileged operations; applicability must be re-evaluated if that changes."
+    },
+    "sync": {
+      "result": "not-applicable-justified",
+      "version": null,
+      "evidence": ["docs/platform/non-applicability.md"],
+      "notes": "The current Development runtime has no durable cross-device user dataset; appearance preference is local browser state only and is not represented as GoreeCloud Sync."
+    }
+  },
+  "health": {"health_endpoint": null, "readiness_endpoint": null},
+  "continuity": {
+    "backup": {"required": false, "requirements": ["Re-evaluate backup scope if the application begins storing durable user or administrative data."]},
+    "restore": {"required": false, "requirements": ["Source can be rebuilt from version control; deployment rollback still requires validation before production."]},
+    "export": {"required": false, "requirements": ["Re-evaluate export requirements if durable user-created data is introduced."]},
+    "portability": {"required": false, "requirements": ["Re-evaluate portability requirements if durable user-created data is introduced."]}
+  },
+  "external_dependencies": [
+    {"name": "GoreeCloud/goreecloud-glaze-ui", "purpose": "Canonical build-time source for current Stable Glaze UI presentation assets.", "required": true, "version_constraint": "1.4.0"},
+    {"name": "Node.js", "purpose": "Development and static build tooling.", "required": true, "version_constraint": ">=20"}
+  ],
+  "compatibility": {
+    "platform_contract": "0.3",
+    "glaze_ui_required": "1.4.0",
+    "requires": ["goreecloud-platform-contract==0.3", "glaze-ui==1.4.0"],
+    "provides": ["design-center-static-web"]
+  },
+  "evidence": {"acceptance_tests": [], "release": []},
+  "conformance": {
+    "status": "nonconformant",
+    "validated_at": null,
+    "evidence": [],
+    "blockers": [
+      "GoreeCloud Manager integration and acceptance are incomplete.",
+      "Privacy Shield integration and acceptance are incomplete.",
+      "Wardveil Security integration and acceptance are incomplete.",
+      "Everkeep and deployment rollback acceptance are incomplete.",
+      "Glaze UI application-specific rendered, accessibility, browser, and production acceptance are incomplete.",
+      "GoreeCloud Mesh integration and acceptance are incomplete.",
+      "GoreeCloud Identity is currently justified non-applicable and must be re-evaluated if identity-bearing runtime behavior is introduced.",
+      "GoreeCloud Sync is currently justified non-applicable and must be re-evaluated if durable synchronized state is introduced.",
+      "Supported API access has not been implemented for a future production architecture.",
+      "Canonical GoreeCloud project specification and application umbrella identity are not yet established.",
+      "Production deployment target and release evidence are not configured or accepted."
+    ]
+  }
+}

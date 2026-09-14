@@ -1,27 +1,31 @@
 # GoreeCloud Design Center
 
-GoreeCloud Design Center is the development workspace for exploring, presenting, and validating GoreeCloud interface foundations and reusable Glaze UI patterns.
+GoreeCloud Design Center is the Development workspace for inspecting, presenting, and validating GoreeCloud interface foundations and reusable current-Stable Glaze UI patterns.
 
 ## Current state
 
 **Lifecycle:** Development  
 **Deployment:** Not configured  
-**Stable Glaze target:** GLAZE UI V1.4 / `1.4.0`
+**Stable Glaze target:** GLAZE UI V1.4 / `1.4.0`  
+**Platform Contract:** `0.3`
 
-This repository now contains a runnable, mobile-first Design Center foundation instead of the previous placeholder-only README. It is intentionally **not** labeled Stable: application-specific visual, accessibility, platform, identity, and production acceptance still have to be completed and verified.
+The repository contains an original GoreeCloud-owned, mobile-first static web application. It is intentionally **not** labeled Stable: application-specific visual, accessibility, browser/platform, platform-system, identity, deployment, rollback, and production acceptance are still incomplete.
 
 ## What is implemented
 
-- Responsive Design Center application shell for Mobile, Tablet, Desktop, and Wide Desktop.
-- Local-only interface assets and a repository-local Design Center mark.
-- Foundation reference panels for material hierarchy, adaptive window classes, accessibility priorities, and protected truth boundaries.
-- Interactive component specimens using inherited Glaze component classes where available.
-- Appearance switching for Light, Dark, and Deep Dark.
-- Client-side catalog filtering.
+- Responsive Design Center shell for Mobile, Tablet, Desktop, and Wide Desktop.
+- Repository-local Design Center mark and favicon.
+- Foundation reference panels for material hierarchy, semantic state, adaptive windows, and accessibility priorities.
+- Runtime semantic-token inspector that reads computed values from the locally synchronized Glaze stylesheet without redefining Glaze authority.
+- Interactive component and operational-state specimens.
+- Light, Dark, Deep Dark, and system appearance switching.
+- Client-side catalog filtering and URL hash navigation.
 - Reduced-motion, reduced-transparency, increased-contrast, forced-colors, keyboard-focus, touch-target, and reflow safeguards.
-- A fail-closed Glaze synchronization step that pins the canonical `goreecloud-glaze-ui` source revision and vendors its recursive CSS dependency chain at build time.
-- Source validation and a dependency-free static build pipeline.
-- GitHub Actions validation on pull requests and pushes to `main`.
+- Fail-closed Glaze synchronization pinned to exact canonical source.
+- Platform Contract `0.3` declaration covering all eight Integral Platform Systems.
+- Source/repository validation for IDs, internal anchors, `aria-controls`, baseline documentation, runtime dependency boundaries, and Platform Contract consistency.
+- GitHub Actions validation against the pinned central Platform Contract validator and exact source revision.
+- Static build artifact generation with source-derived metadata.
 
 ## Development
 
@@ -31,20 +35,23 @@ Requires Node.js 20 or newer.
 npm run build
 ```
 
-`npm run build` performs three controlled steps:
+The build:
 
 1. Synchronizes the pinned GoreeCloud-controlled Glaze UI source into `vendor/`.
-2. Validates the Design Center source and the synchronized Glaze lifecycle/version.
-3. Produces a deployable static artifact in `dist/`.
+2. Validates Design Center source and synchronized Glaze lifecycle/version.
+3. Produces the static artifact in `dist/`.
+4. Runs workspace, repository-baseline, and Platform Contract consistency checks.
 
-No third-party runtime CDN, remote font, tracker, analytics library, or advertising dependency is required.
+The GitHub Actions workflow additionally validates `goreecloud.platform.yaml` using the central Platform Contract `0.3` validator pinned to GoreeCloud/GoreeCloud commit `908701c6795ffcd608bd3d8a1e787395a04f1d62`.
+
+No third-party runtime CDN, remote font, tracker, analytics library, or advertising dependency is required by the current source.
 
 ## Authority boundary
 
-The canonical Glaze implementation remains `GoreeCloud/goreecloud-glaze-ui`. This repository consumes that authority; it does not redefine Glaze lifecycle, security, privacy, identity, or resilience truth.
+The canonical Glaze implementation remains `GoreeCloud/goreecloud-glaze-ui`. Platform Contract authority remains in `GoreeCloud/GoreeCloud`. Design Center consumes those authorities; it does not redefine Glaze lifecycle, security, privacy, identity, synchronization, recovery, or platform truth.
 
 ## Acceptance boundary
 
-This source foundation is not a Stable application claim. Stable eligibility still requires application-specific rendered visual review, mobile-first acceptance, assistive-technology review, browser/platform qualification, performance review, repository-local identity completion, security/privacy/resilience integration review where applicable, and any required production/deployment evidence.
+Green CI proves only the automated checks encoded in this repository and the pinned central declaration validator. It does not prove manual optical approval, assistive-technology acceptance, representative-device/browser qualification, complete Integral Platform System acceptance, production deployment, rollback, or Stable certification.
 
-A canonical Design Center project specification and its required application umbrella identity were not established by this source-foundation change and remain separate governance work. Passing CI proves only the automated checks encoded in this repository; it does not prove manual optical approval, physical-device acceptance, production deployment, or Stable certification.
+A canonical Design Center project specification and its required application umbrella identity remain separate governance work.

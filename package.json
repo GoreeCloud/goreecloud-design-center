@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "sync:glaze": "node scripts/tooling.mjs sync",
-    "validate": "node scripts/tooling.mjs validate",
-    "build": "node scripts/tooling.mjs build"
+    "validate": "node scripts/tooling.mjs validate && node scripts/validate-workspace.mjs",
+    "build": "node scripts/tooling.mjs build && node scripts/validate-workspace.mjs"
   },
   "engines": {
     "node": ">=20"
