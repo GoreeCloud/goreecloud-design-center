@@ -29,7 +29,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: GoreeCloud/GoreeCloud
-          ref: 908701c6795ffcd608bd3d8a1e787395a04f1d62
+          ref: dd7701b116d210a82ec0cb18ccb84b553b6e87e1
           path: .platform-contract
           persist-credentials: false
 
@@ -46,7 +46,7 @@ jobs:
       - name: Install pinned Platform Contract validator dependencies
         run: python -m pip install --disable-pip-version-check PyYAML==6.0.2 jsonschema==4.23.0
 
-      - name: Validate Platform Contract 0.3 declaration
+      - name: Validate Platform Contract 0.2 declaration
         run: python .platform-contract/scripts/validate_platform_manifest.py goreecloud.platform.yaml
 
       - name: Build and validate Design Center
