@@ -69,16 +69,26 @@ for (const file of baselineFiles) {
 }
 
 if (manifest) {
-  const expectedSystems = ['manager', 'privacy_shield', 'wardveil_security', 'everkeep', 'glaze_ui', 'mesh', 'identity', 'sync'];
-  if (manifest.schema_version !== '0.3') fail('Platform Contract schema_version must be 0.3.');
+  const expectedSystems = ['manager', 'privacy_shield', 'wardveil_security', 'everkeep', 'glaze_ui', 'mesh', 'identity'].sort();
+  const actualSystems = Object.keys(manifest.platform_systems ?? {}).sort();
+  if (manifest.schema_version !== '0.2') fail('Platform Contract schema_version must be 0.2.');
   if (manifest.component?.repository !== 'GoreeCloud/goreecloud-design-center') fail('Platform manifest repository identity is incorrect.');
   if (manifest.lifecycle !== 'development') fail('Design Center Platform Contract lifecycle must remain development.');
   if (manifest.conformance?.status !== 'nonconformant') fail('Design Center must remain nonconformant until all applicable acceptance gates pass.');
-  if (manifest.compatibility?.platform_contract !== '0.3') fail('Platform Contract compatibility version must be 0.3.');
-  if (manifest.compatibility?.glaze_ui_required !== config.glaze.version) fail('Platform manifest Glaze requirement must match Design Center configuration.');
-  if (manifest.platform_systems?.glaze_ui?.version !== config.glaze.version) fail('Declared Glaze integration version must match Design Center configuration.');
-  for (const system of expectedSystems) {
-    if (!manifest.platform_systems?.[system]) fail(`Platform manifest does not declare Integral Platform System: ${system}`);
+  if (manifest.compatibility?.platform_contract !== '0.2') fail('Platform Contract compatibility version must be 0.2.');
+  if (manifest.compatibility?.glaze_ui_required !== config.glaze.requiredStableVersion) fail('Platform manifest Glaze requirement must match the current required Stable target.');
+  if (manifest.platform_systems?.glaze_ui?.version !== config.glaze.version) fail('Declared Glaze integration version must match the implemented Design Center source version.');
+  if (config.glaze.version === config.glaze.requiredStableVersion && manifest.platform_systems?.glaze_ui?.result === 'applicable-migration-required') {
+    fail('Glaze migration-required state is inconsistent when implemented and required versions are identical.');
+  }
+  if (config.glaze.version !== config.glaze.requiredStableVersion && !['applicable-migration-required', 'applicable-nonconformant'].includes(manifest.platform_systems?.glaze_ui?.result)) {
+    fail('An older implemented Glaze version must remain migration-required or nonconformant until the Stable target is implemented and accepted.');
+  }
+  if (JSON.stringify(actualSystems) !== JSON.stringify(expectedSystems)) {
+    fail(`Platform manifest must declare exactly the seven Integral Platform Systems: ${expectedSystems.join(', ')}; found: ${actualSystems.join(', ')}`);
+  }
+  if (Object.hasOwn(manifest.platform_systems ?? {}, 'sync')) {
+    fail('GoreeCloud Sync is separately governed application/service functionality and must not be declared as an Integral Platform System.');
   }
 }
 
@@ -88,4 +98,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log('Design Center workspace and repository-baseline validation passed.');
+console.log(`Design Center workspace validation passed. Glaze source ${config.glaze.version}; required Stable ${config.glaze.requiredStableVersion}.`);
