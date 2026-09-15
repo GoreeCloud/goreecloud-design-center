@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.3",
+  "schema_version": "0.2",
   "component": {
     "type": "application",
     "id": "design-center",
@@ -56,12 +56,6 @@
       "version": null,
       "evidence": ["docs/platform/non-applicability.md"],
       "notes": "The current Development runtime has no accounts, authentication, authorization, user-owned data, sessions, or privileged operations; applicability must be re-evaluated if that changes."
-    },
-    "sync": {
-      "result": "not-applicable-justified",
-      "version": null,
-      "evidence": ["docs/platform/non-applicability.md"],
-      "notes": "The current Development runtime has no durable cross-device user dataset; appearance preference is local browser state only and is not represented as GoreeCloud Sync."
     }
   },
   "health": {"health_endpoint": null, "readiness_endpoint": null},
@@ -76,9 +70,9 @@
     {"name": "Node.js", "purpose": "Development and static build tooling.", "required": true, "version_constraint": ">=20"}
   ],
   "compatibility": {
-    "platform_contract": "0.3",
+    "platform_contract": "0.2",
     "glaze_ui_required": "1.4.1",
-    "requires": ["goreecloud-platform-contract==0.3", "glaze-ui==1.4.1"],
+    "requires": ["goreecloud-platform-contract==0.2", "glaze-ui==1.4.1"],
     "provides": ["design-center-static-web"]
   },
   "evidence": {"acceptance_tests": [], "release": []},
@@ -94,7 +88,7 @@
       "Glaze UI 1.4.1 migration plus application-specific rendered, accessibility, browser, and production acceptance are incomplete.",
       "GoreeCloud Mesh integration and acceptance are incomplete.",
       "GoreeCloud Identity is currently justified non-applicable and must be re-evaluated if identity-bearing runtime behavior is introduced.",
-      "GoreeCloud Sync is currently justified non-applicable and must be re-evaluated if durable synchronized state is introduced.",
+      "GoreeCloud Sync is separately governed application/service functionality; the current runtime has no durable cross-device user dataset and Sync applicability must be re-evaluated if that changes.",
       "Supported API access has not been implemented for a future production architecture.",
       "The canonical project specification now exists, but the governed application umbrella identity is still not approved.",
       "Production deployment target and release evidence are not configured or accepted."
