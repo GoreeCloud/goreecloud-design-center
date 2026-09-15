@@ -38,8 +38,8 @@
     "glaze_ui": {
       "result": "applicable-nonconformant",
       "version": "1.4.0",
-      "evidence": ["design-center.config.json", "scripts/tooling.mjs", ".github/workflows/validate.yml"],
-      "notes": "Current Stable GLAZE UI V1.4 source is pinned and validated at build time; application-specific rendered, accessibility, browser, and production acceptance remain incomplete."
+      "evidence": ["design-center.config.json", "scripts/tooling.mjs", "scripts/validate-workspace.mjs", ".github/workflows/validate.yml"],
+      "notes": "Design Center currently implements GLAZE UI V1.4 / 1.4.0 at exact pinned source revision ee057ce9e729296aeaeda182d01db89f52bd66f3. Current Stable 1.4.1 is required; source migration and application-specific rendered, accessibility, browser, and production acceptance remain incomplete."
     },
     "mesh": {
       "result": "applicable-blocked",
@@ -72,13 +72,13 @@
     "portability": {"required": false, "requirements": ["Re-evaluate portability requirements if durable user-created data is introduced."]}
   },
   "external_dependencies": [
-    {"name": "GoreeCloud/goreecloud-glaze-ui", "purpose": "Canonical build-time source for current Stable Glaze UI presentation assets.", "required": true, "version_constraint": "1.4.0"},
+    {"name": "GoreeCloud/goreecloud-glaze-ui", "purpose": "Canonical GoreeCloud source for the currently implemented 1.4.0 presentation assets while migration to required Stable 1.4.1 remains pending.", "required": true, "version_constraint": "1.4.0"},
     {"name": "Node.js", "purpose": "Development and static build tooling.", "required": true, "version_constraint": ">=20"}
   ],
   "compatibility": {
     "platform_contract": "0.3",
-    "glaze_ui_required": "1.4.0",
-    "requires": ["goreecloud-platform-contract==0.3", "glaze-ui==1.4.0"],
+    "glaze_ui_required": "1.4.1",
+    "requires": ["goreecloud-platform-contract==0.3", "glaze-ui==1.4.1"],
     "provides": ["design-center-static-web"]
   },
   "evidence": {"acceptance_tests": [], "release": []},
@@ -91,12 +91,12 @@
       "Privacy Shield integration and acceptance are incomplete.",
       "Wardveil Security integration and acceptance are incomplete.",
       "Everkeep and deployment rollback acceptance are incomplete.",
-      "Glaze UI application-specific rendered, accessibility, browser, and production acceptance are incomplete.",
+      "Glaze UI 1.4.1 migration plus application-specific rendered, accessibility, browser, and production acceptance are incomplete.",
       "GoreeCloud Mesh integration and acceptance are incomplete.",
       "GoreeCloud Identity is currently justified non-applicable and must be re-evaluated if identity-bearing runtime behavior is introduced.",
       "GoreeCloud Sync is currently justified non-applicable and must be re-evaluated if durable synchronized state is introduced.",
       "Supported API access has not been implemented for a future production architecture.",
-      "Canonical GoreeCloud project specification and application umbrella identity are not yet established.",
+      "The canonical project specification now exists, but the governed application umbrella identity is still not approved.",
       "Production deployment target and release evidence are not configured or accepted."
     ]
   }
