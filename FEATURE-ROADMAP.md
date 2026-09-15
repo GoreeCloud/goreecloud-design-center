@@ -21,7 +21,8 @@ Roadmap items are proposed work, not implementation claims.
 
 ## Platform and acceptance work
 
-- Complete applicable GoreeCloud Manager, Privacy Shield, Wardveil Security, Everkeep, Glaze UI, GoreeCloud Mesh, GoreeCloud Identity, and GoreeCloud Sync evaluations and accepted integrations.
+- Complete applicable evaluations and accepted integrations for the seven Integral Platform Systems: GoreeCloud Manager, Privacy Shield, Wardveil Security, Everkeep, Glaze UI, GoreeCloud Mesh, and GoreeCloud Identity.
+- Evaluate GoreeCloud Sync separately as an application/service capability if Design Center introduces durable synchronized or cross-device user state; do not represent Sync as an eighth Integral Platform System.
 - Add supported API access before any future production-readiness claim when the approved production architecture requires it.
 - Complete accessibility, browser/platform, performance, deployment, rollback, and production acceptance.
 - Keep Glaze UI migration continuous whenever a later Stable Glaze release supersedes the implemented source version.
