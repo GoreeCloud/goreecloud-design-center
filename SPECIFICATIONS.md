@@ -4,7 +4,7 @@
 **Repository:** `GoreeCloud/goreecloud-design-center`  
 **Implemented Glaze source:** GLAZE UI V1.4 / `1.4.0` at exact source revision `ee057ce9e729296aeaeda182d01db89f52bd66f3`  
 **Required Stable Glaze target:** GLAZE UI V1.4 / `1.4.1`  
-**Platform Contract:** `0.3`
+**Platform Contract:** `0.2`
 
 ## Role
 
@@ -31,7 +31,9 @@ The application currently has no backend, database, account system, authenticati
 
 ## Platform Contract boundary
 
-Design Center uses Platform Contract `0.3` and evaluates all eight Integral Platform Systems. Current source keeps Manager, Privacy Shield, Wardveil Security, Everkeep, and Mesh blocked; Glaze UI nonconformant pending 1.4.1 migration and application acceptance; and Identity and Sync explicitly justified non-applicable for the current stateless/no-account architecture. Applicability must be re-evaluated if the architecture changes.
+Design Center uses Platform Contract `0.2` and evaluates exactly seven Integral Platform Systems: GoreeCloud Manager, Privacy Shield, Wardveil Security, Everkeep, Glaze UI, GoreeCloud Mesh, and GoreeCloud Identity. Current source keeps Manager, Privacy Shield, Wardveil Security, Everkeep, and Mesh blocked; Glaze UI remains nonconformant pending 1.4.1 migration and application acceptance; and Identity is explicitly justified non-applicable for the current stateless/no-account architecture. Applicability must be re-evaluated if the architecture changes.
+
+GoreeCloud Sync remains separately governed application/service functionality. The current runtime has no durable cross-device user dataset and does not claim a Sync integration; that applicability must be re-evaluated if synchronized state is introduced.
 
 ## Authority boundaries
 
@@ -39,4 +41,4 @@ Design Center presents Glaze UI and related GoreeCloud interface concepts. It do
 
 ## Current acceptance boundary
 
-Source implementation and automated source/build checks are not Stable or production acceptance. Rendered visual review, assistive-technology review, browser/platform qualification, performance review, current-Stable Glaze migration, platform-system acceptance, identity completion, deployment, rollback, and production evidence remain separate gates.
+Source implementation and automated source/build checks are not Stable or production acceptance. Rendered visual review, assistive-technology review, browser/platform qualification, performance review, current-Stable Glaze migration, platform-system acceptance, applicable Sync acceptance, deployment, rollback, and production evidence remain separate gates.
