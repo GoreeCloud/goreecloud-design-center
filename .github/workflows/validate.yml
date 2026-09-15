@@ -13,9 +13,17 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     timeout-minutes: 12
+    env:
+      DESIGN_CENTER_SOURCE_REVISION: ${{ github.event.pull_request.head.sha || github.sha }}
     steps:
-      - name: Check out Design Center source
+      - name: Check out exact Design Center source
         uses: actions/checkout@v4
+        with:
+          ref: ${{ env.DESIGN_CENTER_SOURCE_REVISION }}
+          persist-credentials: false
+
+      - name: Verify exact Design Center source revision
+        run: test "$(git rev-parse HEAD)" = "$DESIGN_CENTER_SOURCE_REVISION"
 
       - name: Check out pinned Platform Contract authority
         uses: actions/checkout@v4
@@ -23,6 +31,7 @@ jobs:
           repository: GoreeCloud/GoreeCloud
           ref: 908701c6795ffcd608bd3d8a1e787395a04f1d62
           path: .platform-contract
+          persist-credentials: false
 
       - name: Use Node.js
         uses: actions/setup-node@v4
@@ -46,7 +55,7 @@ jobs:
       - name: Upload static artifact
         uses: actions/upload-artifact@v4
         with:
-          name: goreecloud-design-center-${{ github.sha }}
+          name: goreecloud-design-center-${{ env.DESIGN_CENTER_SOURCE_REVISION }}
           path: dist
           if-no-files-found: error
           retention-days: 14
